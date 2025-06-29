@@ -68,7 +68,7 @@ export default function LoginPage() {
           {isSubmitting ? 'Logging in...' : 'Sign In'}
         </button>
         <div className="mt-4 text-center text-sm text-gray-500">
-          Don't have an account?{' '}
+          Don&apos;t have an account?{' '}
           <a href="/signup" className="text-blue-600 hover:underline font-medium">Sign up</a>
         </div>
       </form>

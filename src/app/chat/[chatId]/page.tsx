@@ -2,7 +2,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { useChat, useChatList } from '../../../hooks/useChat';
-import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 
 // Helper to convert Firestore timestamp to JS Date
@@ -41,7 +40,7 @@ export default function ChatPage() {
       setHasChatted(true);
       await sendMessage(message, chatId);
       setMessage('');
-      refetchChatList && refetchChatList();
+      refetchChatList();
     }
   };
 
@@ -53,7 +52,6 @@ export default function ChatPage() {
     );
   }
 
-  console.log(messages);
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black flex items-center justify-center relative font-sans">
       <div className="flex w-full max-w-5xl min-h-[80vh] h-[80vh] bg-black/80 rounded-2xl shadow-2xl">
